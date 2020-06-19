@@ -2,7 +2,12 @@
 Repository of the Calliope Hydro Model of the Zambesi River Basin
 
 ## Overview
-...
+The model hosted in this repository consists in an integrated coupling between the energy modelling framework Calliope (For further details about Calliope, see: https://github.com/calliope-project), including the national loads and relative power generation technologies, and a hydrologic simulation model of the water surface evaporation and dependence of the hydro-power production from the storage level of the dams.
+
+[IMAGE]
+
+The two models are combined by an iterative process: 
+
 
 ## Calliope version
 To run the Calliope model in this repository without conflicts, please use the Calliope 0.6.5 version available here: https://www.callio.pe/news/2020/01/release-v0.6.5/
