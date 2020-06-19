@@ -6,6 +6,9 @@ The model hosted in this repository consists in an integrated coupling between t
 
 https://github.com/SESAM-Polimi/ZRB_Calliope-Hydro/blob/master/Multiple%20Cascade%20Water%20Reservoirs.png
 
+<img src="https://github.com/SESAM-Polimi/ZRB_Calliope-Hydro/blob/master/Multiple%20Cascade%20Water%20Reservoirs.png" width="600">
+
+
 The two models are combined by an iterative process: 
 
 
