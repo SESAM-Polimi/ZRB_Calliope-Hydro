@@ -1,0 +1,10 @@
+carriers,costs,total_levelised_cost
+water_to_hpC,monetary,1.5270355624678649
+waterE,monetary,inf
+waterC,monetary,1.5270355624681884
+waterA,monetary,3.4953449852783955
+water_to_hpA,monetary,3.4953449852776535
+power,monetary,0.05965073889411369
+waterB,monetary,2.6887256476099206
+waterD,monetary,0.5699329362842666
+water_to_hpB,monetary,2.6887256476098735

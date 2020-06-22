@@ -45,7 +45,7 @@ for indice in range(0,5):
       WaterToStorageB_ITT = DataFrame2
       evapLoss_ITT= DataFrame3
       supStorage_ITT=DataFrame4
-      Data_ITT=openpyxl.load_workbook('Dry/lsv_min_max_rel_ITT.xlsx') #carico excel con tutti i dati relativi a ITT
+      Data_ITT=openpyxl.load_workbook('Timeseries/lsv_min_max_rel_ITT.xlsx') #carico excel con tutti i dati relativi a ITT
       EvapRate_ITT=Data_ITT['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
       #ciclo per calcolare in ogni timestep il valore di eff e delle altre variabili inizializzate
@@ -57,12 +57,12 @@ for indice in range(0,5):
           evapLoss_ITT.iloc[a]= (supStorage_ITT.iloc[a]*EvapRate_ITT.cell(row=b, column=6).value/1000/EvapRate_ITT.cell(row=b, column=2).value/24)/(StorageA_nuovo.iloc[a] + 699000000)
           
       #rimuovi le timeseries presenti nella directory e le sostituisco con quelle aggiornate    
-      os.remove('Dry/effITT.txt')    
-      os.remove('Dry/WaterToStorageB_ITT.txt')
-      os.remove('Dry/evapLoss_ITT.txt')
-      eff_conv_ITT.to_csv('Dry/effITT.txt') 
-      WaterToStorageB_ITT.to_csv('Dry/WaterToStorageB_ITT.txt')
-      evapLoss_ITT.to_csv('Dry/evapLoss_ITT.txt')
+      os.remove('Timeseries/effITT.txt')    
+      os.remove('Timeseries/WaterToStorageB_ITT.txt')
+      os.remove('Timeseries/evapLoss_ITT.txt')
+      eff_conv_ITT.to_csv('Timeseries/effITT.txt') 
+      WaterToStorageB_ITT.to_csv('Timeseries/WaterToStorageB_ITT.txt')
+      evapLoss_ITT.to_csv('Timeseries/evapLoss_ITT.txt')
 
       #Kafue Gorge
       StorageB_nuovo=model.get_formatted_array('storage').loc[{'techs': 'storageB','locs':['Zambia']}].to_pandas().T #estraggo risultati da modello
@@ -70,7 +70,7 @@ for indice in range(0,5):
       WaterToStorageD_KG = DataFrame6
       evapLoss_KG= DataFrame7
       supStorage_KG=DataFrame8
-      Data_KG=openpyxl.load_workbook('Dry/lsv_min_max_rel_KGU.xlsx') #carico excel con tutti i dati relativi a ITT
+      Data_KG=openpyxl.load_workbook('Timeseries/lsv_min_max_rel_KGU.xlsx') #carico excel con tutti i dati relativi a ITT
       EvapRate_KG=Data_KG['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
       for k in range(0, 48):    
@@ -80,12 +80,12 @@ for indice in range(0,5):
           h=k+2
           evapLoss_KG.iloc[k]= (supStorage_KG.iloc[k]*EvapRate_KG.cell(row=h,column=6).value/1000/EvapRate_KG.cell(row=h,column=2).value/24)/(StorageB_nuovo.iloc[k] + 5000000)
                     
-      os.remove('Dry/effKG.txt')    
-      os.remove('Dry/WaterToStorageD_KG.txt')
-      os.remove('Dry/evapLoss_KG.txt')
-      eff_conv_KG.to_csv('Dry/effKG.txt') 
-      WaterToStorageD_KG.to_csv('Dry/WaterToStorageD_KG.txt')
-      evapLoss_KG.to_csv('Dry/evapLoss_KG.txt')
+      os.remove('Timeseries/effKG.txt')    
+      os.remove('Timeseries/WaterToStorageD_KG.txt')
+      os.remove('Timeseries/evapLoss_KG.txt')
+      eff_conv_KG.to_csv('Timeseries/effKG.txt') 
+      WaterToStorageD_KG.to_csv('Timeseries/WaterToStorageD_KG.txt')
+      evapLoss_KG.to_csv('Timeseries/evapLoss_KG.txt')
  
       #Kariba
       StorageC_nuovo=model.get_formatted_array('storage').loc[{'techs': 'storageC','locs':['Zambia']}].to_pandas().T #estraggo risultati da modello
@@ -93,7 +93,7 @@ for indice in range(0,5):
       WaterToStorageD_KA = DataFrame10
       evapLoss_KA= DataFrame11
       supStorage_KA=DataFrame12
-      Data_KA=openpyxl.load_workbook('Dry/lsv_min_max_rel_KA.xlsx') #carico excel con tutti i dati relativi a ITT
+      Data_KA=openpyxl.load_workbook('Timeseries/lsv_min_max_rel_KA.xlsx') #carico excel con tutti i dati relativi a ITT
       EvapRate_KA=Data_KA['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
       for j in range(0, 48):    
@@ -103,19 +103,19 @@ for indice in range(0,5):
           l=j+2
           evapLoss_KA.iloc[j]= (supStorage_KA.iloc[j]*EvapRate_KA.cell(row=l,column=6).value/1000/EvapRate_KA.cell(row=l,column=2).value/24)/(StorageC_nuovo.iloc[j] + 116054000000)
               
-      os.remove('Dry/effKA.txt')    
-      os.remove('Dry/WaterToStorageD_KA.txt')
-      os.remove('Dry/evapLoss_KA.txt')
-      eff_conv_KA.to_csv('Dry/effKA.txt') 
-      WaterToStorageD_KA.to_csv('Dry/WaterToStorageD_KA.txt')
-      evapLoss_KA.to_csv('Dry/evapLoss_KA.txt')
+      os.remove('Timeseries/effKA.txt')    
+      os.remove('Timeseries/WaterToStorageD_KA.txt')
+      os.remove('Timeseries/evapLoss_KA.txt')
+      eff_conv_KA.to_csv('Timeseries/effKA.txt') 
+      WaterToStorageD_KA.to_csv('Timeseries/WaterToStorageD_KA.txt')
+      evapLoss_KA.to_csv('Timeseries/evapLoss_KA.txt')
  
       #Cahora
       StorageD_nuovo=model.get_formatted_array('storage').loc[{'techs': 'storageD','locs':['Moz-North-Center']}].to_pandas().T #estraggo risultati da modello
       eff_conv_CB = DataFrame13 #creo variabile eff   
       evapLoss_CB= DataFrame14
       supStorage_CB=DataFrame15
-      Data_CB=openpyxl.load_workbook('Dry/lsv_min_max_rel_CB.xlsx') #carico excel con tutti i dati relativi a ITT
+      Data_CB=openpyxl.load_workbook('Timeseries/lsv_min_max_rel_CB.xlsx') #carico excel con tutti i dati relativi a ITT
       EvapRate_CB=Data_CB['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
 
@@ -125,10 +125,10 @@ for indice in range(0,5):
           c=i+2
           evapLoss_CB.iloc[i]= (supStorage_CB.iloc[i]*EvapRate_CB.cell(row=c,column=6).value/1000/EvapRate_CB.cell(row=c,column=2).value/24)/(StorageD_nuovo.iloc[i] + 32000000)
               
-      os.remove('Dry/effCB.txt')
-      os.remove('Dry/evapLoss_CB.txt')              
-      eff_conv_CB.to_csv('Dry/effCB.txt') #produco csv con eff
-      evapLoss_CB.to_csv('Dry/evapLoss_CB.txt')
+      os.remove('Timeseries/effCB.txt')
+      os.remove('Timeseries/evapLoss_CB.txt')              
+      eff_conv_CB.to_csv('Timeseries/effCB.txt') #produco csv con eff
+      evapLoss_CB.to_csv('Timeseries/evapLoss_CB.txt')
 
 
       #plot degli storage (criterio di convergenzaq: assenza di variazioni significative nell'andamento tra un'iterazione e l'altra)
@@ -146,6 +146,6 @@ for indice in range(0,5):
       #ax1.plot(StorageD_nuovo[day:end].index,StorageD_nuovo[day:end].values,'#0015F9', alpha=0.2, label='CB')         
       #fig.savefig("KA-CB.png", dpi=fig.dpi,bbox_inches='tight')   
 
-model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario1/Iterazione'+str(indice))
+model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenariox/Iterazione'+str(indice))
      
 
