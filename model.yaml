@@ -9,15 +9,15 @@ import:  # Import other files from paths relative to this file, or absolute path
     - 'locations/Zambia.yaml'
     - 'locations/Zimbabwe.yaml'
     - 'locations/South-Africa.yaml'
-    - 'locations/Links.yaml'
     - 'locations/Namibia.yaml'    
+    - 'locations/Links.yaml'
     
 # Model configuration: all settings that affect the built model
 model:
-    name: Mozambico example model
+    name: Calliope_Hydro
 
     # What version of Calliope this model is intended for
-    calliope_version: 0.6.5-dev
+    calliope_version: 0.6.5
 
     # Time series data path - can either be a path relative to this file, or an absolute path
     timeseries_data_path: 'dry'
