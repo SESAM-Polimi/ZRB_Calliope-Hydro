@@ -1,0 +1,42 @@
+##
+# LOCATIONS
+##
+
+locations:
+    # Zimbabwe
+    Zimbabwe:
+        coordinates: {lat: -18, lon: 30}
+        techs:  
+        
+            demand_power:   
+                constraints:
+                    resource: file=timeseries.csv:Zimbabwe
+                    
+#idroelettrico legato allo Zambezi river basin      
+              
+            ConversionPlusC:
+                constraints:                    
+                    energy_eff: 1 #file=KA_lsv_evap_salto.csv:eff-convplus1 #1000*9.8*110*0.9/3600 kWh/m^3
+                    carrier_ratios.carrier_out_2.waterD: 1 
+
+            hydroC: #Kariba Sud
+                constraints:
+                    energy_cap_equals: 750000 #750MW
+                    energy_eff: file=effKA.txt:Zambia
+                    
+#altre tecnologie                   
+                    
+            Coal: #Hawage
+                constraints:
+                    energy_cap_equals: 920000
+                    #energy_cap_min_use: 0.55
+                     
+            Coal_old:
+                constraints:
+                    energy_cap_equals: 270000
+                     
+            Biomass:
+                constraints:
+                    energy_cap_equals: 96500
+                     
+                    

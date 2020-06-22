@@ -1,0 +1,128 @@
+##
+# LOCATIONS
+##
+
+locations:
+
+#Zambia
+    Zambia:
+        coordinates: {lat: -28, lon: 15}
+
+        techs:            
+            demand_power:
+                constraints:
+                    resource: file=timeseries.csv:Zambia
+ 
+#centrali del Zambezi river basin
+                       
+ 
+            #Ithezi 
+            
+            supply_waterA:
+                constraints:
+                    resource: file=timeseries.csv:InflowITT                     
+
+            storageA:
+                constraints:
+                    storage_cap_equals: 5184000000 # m^3 
+                    storage_initial: 0.6049
+                    #storage_final: 0.6049
+                    energy_cap_per_storage_cap_max: 0.000425    
+                    storage_loss: file=evapLoss_ITT.txt:Zambia 
+                    
+            ConversionPlusA:
+                constraints:                    
+                    energy_eff: 1 #1000*9.8*110*0.9/3600 kWh/m^3  0.03185 
+                    carrier_ratios.carrier_out_2.waterB: 1                   
+         
+            hydroA: #Ithezi
+                constraints:
+                    energy_eff: file=effITT.txt:Zambia
+                    energy_cap_equals: 120000 #120MW      
+
+            spillageA:
+                constraints:
+                    energy_eff: 0                    
+
+        
+            # KafueGorge      
+            supply_waterB:
+                constraints:
+                    resource: file=timeseries.csv:InflowKG                     
+
+            storageB:
+                constraints:
+                    storage_cap_equals: 1178000000 # m^3 
+                    storage_initial: 0.3257
+                    #storage_final: 0.3257
+                    energy_cap_per_storage_cap_max: 0.000770119      
+                    storage_loss: file=evapLoss_KG.txt:Zambia
+                    
+            ConversionPlusB:
+                constraints:                    
+                    energy_eff: 1 #1000*9.8*110*0.9/3600 kWh/m^3  0.98
+                    carrier_ratios.carrier_out_2.waterD: 1 
+                    
+
+            hydroB: #KafueGorge
+                constraints:
+                    energy_eff: file=effKG.txt:Zambia
+                    energy_cap_equals: 990000 #990MW       
+                    
+            spillageB:
+                constraints:
+                    energy_eff: 0
+     
+            #Kariba 
+            supply_waterC:
+                constraints:
+                    resource: file=timeseries.csv:InflowKA 
+                    
+            storageC:
+                constraints:
+                    storage_cap_equals: 64700000000 # m^3 
+                    storage_initial: 0.7715
+                    #storage_final: 0.07015
+                    energy_cap_per_storage_cap_max: 0.000113509
+                    storage_loss: file=evapLoss_KA.txt:Zambia
+                    
+            ConversionPlusC:
+                constraints:                    
+                    energy_eff: 1 #1000*9.8*110*0.9/3600 kWh/m^3  0.19355 
+                    carrier_ratios.carrier_out_2.waterD: 1
+                                    
+            hydroC: #Kariba Nord
+                constraints:
+                    energy_cap_equals: 1080000 #1.08GW
+                    energy_eff: file=effKA.txt:Zambia
+                    
+            spillageC:
+                constraints:
+                    energy_eff: 0            
+                                        
+#altre tecnologie presenti
+
+            hydro: #Lunzua Rivwer, Lusiwasi, Chishimba Falls, Musonda Falls, Shiwang'andu, Mulunguish, Lunsemfwa + Victoria Falls 
+                constraints:
+                    energy_cap_equals: 207500 #kW 
+                    
+            DieselEngine: #Bancroft,Luano,Luanshya,Mufulira,Kabompo,Zambezi,Mufumbwe,Luangwa,Lukulu,Chavuma,Shango'mbo
+                constraints: 
+                    energy_cap_equals: 88880
+                    
+            HFO: #Ndola
+                constraints:
+                    energy_cap_equals: 110000
+                     
+            Coal:
+                constraints:
+                    energy_cap_equals: 300000
+                     
+            PV:
+                constraints:
+                    energy_cap_equals: 1000
+                    resource: file=timeseries.csv:PV Zambia #renewables.ninja
+
+            
+    
+    

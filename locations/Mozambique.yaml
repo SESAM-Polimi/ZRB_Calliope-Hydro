@@ -1,0 +1,79 @@
+##
+# LOCATIONS
+##
+
+locations:
+    # region-1-start
+    Moz-North-Center:
+        coordinates: {lat: -15, lon: 33}
+        techs:  
+        
+            demand_power:   
+                constraints:
+                    resource: file=timeseries.csv:North-Center-Moz
+                                                    
+                   
+            supply_waterD:
+                constraints:
+                    resource: file=timeseries.csv:InflowCB   #da csv
+
+            storageD:
+                constraints:
+                    storage_cap_equals: 51700000000 # m^3
+                    storage_initial: 0.854
+                    #storage_final: 0.854
+                    energy_cap_per_storage_cap_max: 0.00015737
+                    storage_loss: file=evapLoss_CB.txt:Moz-North-Center
+                    
+            spillageD:
+                constraints:
+                    energy_eff: 0                    
+                              
+                                                         
+            hydroD:
+                constraints:
+                    energy_cap_equals: 2075000 #2GW
+                    energy_eff: file=effCB.txt:Moz-North-Center
+                          
+                          
+            DieselEngine: #Nacala Barcassa + (Nampula + Quelimane + Pemba + Lichinga emergency)
+                constraints:
+                    energy_cap_equals: 116.34 # di cui 13.84 da impianti usati per peak emergency
+
+            OCGT: #Beira
+                constraints:
+                    energy_cap_equals: 14000
+
+    
+    
+    
+    # other-locs-start
+    Moz-South:
+        coordinates: {lat: -26, lon: 32}
+
+        techs:
+            
+            demand_power:
+                constraints:
+                    resource: file=timeseries.csv:South-Moz
+
+            hydro: #Corumana 
+                constraints:
+                    energy_cap_equals: 16600 #kW 
+                    
+            DieselEngine: #Xai-Xai + Inhambane both emergency
+                constraints: 
+                    energy_cap_equals: 8.2
+                    
+            GasEngine: #Temane+CTRG-PPP+Agrekko+Gigawatt+Kuvaninga
+                constraints:
+                    energy_cap_equals: 499600
+            
+            OCGT: #CTM GT
+                constraints:
+                    energy_cap_equals: 24000
+                     
+
+                    
+      
+    

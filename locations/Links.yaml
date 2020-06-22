@@ -1,0 +1,73 @@
+##
+# LOCATIONS
+##                    
+                    
+                    
+links: 
+
+#electricity
+    Moz-North-Center,SudAfrica:
+                techs:
+                   ElectricTransmission533kV:
+                         constraints:
+                             energy_cap_equals: 1920000 #kWh aggiornata al SAPP annual report 2018                              
+    Moz-South,SudAfrica:
+                techs:
+                   ElectricTransmission400kV:
+                         constraints:
+                             energy_cap_equals: 2690000 #somma di quelli che diretti + quelli che psssano per il leshoto
+                   ElectricTransmission275kV:
+                         constraints:
+                             energy_cap_equals: 112000 
+
+    Moz-North-Center,Zimbabwe:
+                techs:
+                   ElectricTransmission400kV:
+                         constraints:
+                             energy_cap_equals: 507000
+                   WaterDTransmission:            
+                             
+    Zimbabwe,Zambia:
+                techs:
+                   ElectricTransmission330kV:
+                         constraints:
+                             energy_cap_equals: 642000                            
+                   WaterCTransmission:
+                   
+    Zimbabwe,Botswana:
+                techs:
+                   ElectricTransmission132kV:
+                         constraints:
+                             energy_cap_equals: 288000                             
+                   ElectricTransmission400kV:
+                         constraints:
+                             energy_cap_equals: 581000
+
+    Botswana,SudAfrica:
+                techs:
+                   ElectricTransmission400kV:
+                         constraints:
+                             energy_cap_equals: 420000                             
+                   ElectricTransmission132kV:
+                         constraints:
+                             energy_cap_equals: 193000                              
+                                           
+                   
+    Zambia,Moz-North-Center:
+                techs:
+                   WaterDTransmission:
+                   
+    Namibia,SudAfrica:
+                techs:
+                   ElectricTransmission400kV:
+                         constraints:
+                             energy_cap_equals: 342000
+                   ElectricTransmission275kV: 
+                         constraints:
+                             energy_cap_equals: 241000
+    Namibia,Zambia:
+                techs:
+                   ElectricTransmission132kV:
+                         constraints:
+                             energy_cap_equals: 120000
+    

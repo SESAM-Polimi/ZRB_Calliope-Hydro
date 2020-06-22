@@ -1,0 +1,22 @@
+techs:
+
+#fotovoltaico
+
+      Nuclear:
+           essentials:
+                 name: 'Nuclear'
+                 color: '#84008A'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf 
+                 energy_eff: 0.33
+                 lifetime: 60                 
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 4480 #$/kWh da FULL Text
+                      om_annual: 112 #$/kW
+                      om_con: 0.0041 #$/kWh da calliope swiss import di uranio
+                      

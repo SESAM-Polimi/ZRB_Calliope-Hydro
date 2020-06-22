@@ -1,0 +1,107 @@
+techs:
+
+#trasmissione
+      ElectricTransmission533kV:
+           essentials:
+                 name: 'ElectricTransmission533kV'
+                 color: '#8465A9'
+                 parent: transmission
+                 carrier: power
+           constraints:
+                 energy_eff: 0.95 #eff ancora da valutare correttamente
+                 energy_cap_equals: 100000000000000
+           costs:
+                monetary:           
+                   om_prod: 0.0076 #$/kWh
+
+      ElectricTransmission400kV:
+           essentials:
+                 name: 'ElectricTransmission400kV'
+                 color: '#8465A9'
+                 parent: transmission
+                 carrier: power
+           constraints:
+                 energy_eff: 0.95
+                 energy_cap_equals: 100000000000000
+           costs:
+                monetary:           
+                   om_prod: 0.0076 #$/kWh
+
+      ElectricTransmission330kV:
+           essentials:
+                 name: 'ElectricTransmission330kV'
+                 color: '#8465A9'
+                 parent: transmission
+                 carrier: power
+           constraints:
+                 energy_eff: 0.95
+                 energy_cap_equals: 100000000000000
+           costs:
+                monetary:           
+                   om_prod: 0.0076 #$/kWh
+                 
+      ElectricTransmission275kV:
+           essentials:
+                 name: 'ElectricTransmission275kV'
+                 color: '#8465A9'
+                 parent: transmission
+                 carrier: power
+           constraints:
+                 energy_eff: 0.95
+                 energy_cap_equals: 100000000000000
+           costs:
+                monetary:           
+                   om_prod: 0.0076 #$/kWh             
+
+      ElectricTransmission220kV:
+           essentials:
+                 name: 'ElectricTransmission220kV'
+                 color: '#8465A9'
+                 parent: transmission
+                 carrier: power
+           constraints:
+                 energy_eff: 0.95
+                 energy_cap_equals: 100000000000000
+           costs:
+                monetary:           
+                   om_prod: 0.0076 #$/kWh
+                 
+      ElectricTransmission132kV:
+           essentials:
+                 name: 'ElectricTransmission132kV'
+                 color: '#8465A9'
+                 parent: transmission
+                 carrier: power
+           constraints:
+                 energy_eff: 0.95
+                 energy_cap_equals: 100000000000000
+           costs:
+                monetary:           
+                   om_prod: 0.0076 #$/kWh
+                 
+      WaterCTransmission:
+           essentials:
+                 name: 'WaterCTransmission'
+                 color: '#000572'
+                 parent: transmission
+                 carrier: waterC
+           constraints: 
+                 energy_cap_equals: 1000000000           
+                
+      WaterDTransmission:
+           essentials:
+                 name: 'WaterDTransmission'
+                 color: '#000572'
+                 parent: transmission
+                 carrier: waterD
+           constraints: 
+                 energy_cap_equals: 1000000000           
+          
+
+#domanda energetica
+      demand_power:
+           essentials:
+                 name: 'Power demand'
+                 color: '#072486'
+                 parent: demand
+                 carrier: power

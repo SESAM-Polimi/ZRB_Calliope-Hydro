@@ -1,0 +1,54 @@
+techs:
+
+#fotovoltaico
+
+      PV:
+           essentials:
+                 name: 'PV'
+                 color: '#F3F311'
+                 parent: supply_plus
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 25
+                 force_resource: true
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1158 #$/kW
+                      om_annual: 22 #$/kW
+                      
+      Biomass:
+           essentials:
+                 name: 'Biomass'
+                 color: '#20FF30'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 energy_eff: 0.40
+                 lifetime: 30               
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 4325
+                      om_prod: 0.003 #$/kWh
+                      om_annual: 54 #$/kW
+                      
+      Wind:
+           essentials:
+                 name: 'Wind'
+                 color: '#FF2020'
+                 parent: supply_plus
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 25
+                 force_resource: true
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1940 #$/kW #full text
+                      om_annual: 37 #$/kW                      

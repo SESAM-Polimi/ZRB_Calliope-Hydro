@@ -1,0 +1,71 @@
+techs:
+
+#supply
+
+
+#thermal
+
+#diesel
+
+
+      DieselEngine:
+           essentials:
+                 name: 'DieselEngine'
+                 color: '#E33B78'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 30
+                 energy_eff: 0.35
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 708
+                      om_annual: 24 #$/kW
+                      om_prod: 0.003 #$/kWh
+                      om_con: 0.049284 #$/kWh
+
+#gas
+
+
+      GasEngine:
+           essentials:
+                 name: 'GasEngine'
+                 color: '#F9CF22'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 30
+                 energy_eff: 0.40
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 708 #???
+                      om_annual: 24 #$/kW
+                      om_prod: 0.0024 #$/kWh
+                      om_con: 0.010908 #$/kWh
+
+
+      OCGT:
+           essentials:
+                 name: 'OCGT'
+                 color: '#E84C4C'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 30
+                 energy_eff: 0.30
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 708
+                      om_annual: 24 #$/anno
+                      om_prod: 0.0024 #$/kWh
+                      om_con: 0.010908 #$/kWh
+

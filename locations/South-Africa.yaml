@@ -1,0 +1,52 @@
+##
+# LOCATIONS
+##
+
+locations:
+                     
+#nodo per il sud-africa
+    SudAfrica:
+        coordinates: {lat: -26, lon: 28}
+        techs:            
+            Coal:
+                constraints:
+                    energy_cap_equals: 37868000
+                     
+            Nuclear:
+                constraints:
+                    energy_cap_equals: 1860000
+
+            OCGT: #eskom+ipp
+                constraints:
+                    energy_cap_equals: 3409000
+                     
+            hydro:
+                constraints:
+                    energy_cap_equals: 600000      
+
+            PV:
+                constraints:
+                    energy_cap_equals: 1474000
+                    resource: file=timeseries.csv:PV SudAfrica  #da renewables.ninja
+
+            Wind:
+                constraints:
+                    energy_cap_equals: 2078000
+                    resource: file=timeseries.csv:Wind SudAfrica  #da renewables.ninja                    
+
+
+#pumped hydro: da modellare come batterie?! guarda swiss calliope
+#CSP,300MW da modellare
+                     
+                     
+            demand_power:
+                constraints:
+                    resource: file=timeseries.csv:SouthAfrica 
+                    
+            
+                    
+                    
+                    
+
+    
+    

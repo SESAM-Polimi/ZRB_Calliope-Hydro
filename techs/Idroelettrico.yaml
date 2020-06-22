@@ -1,0 +1,373 @@
+techs:
+
+#supply
+
+#idroelettrico 
+
+#sistema con 4 bacini + 1 ROR, vedi schema zambezi river basin, sono presenti due rami. uno formato dai bacini A e B, l'altro formato dal bacino C, i quali confluiscono tutti nel bacino D
+
+#Victoria Falls
+
+      supply_water0:
+           essentials:
+                name: 'inflow_VF'
+                color: '#0287FF'
+                parent: supply
+                carrier_out: water0
+           constraints:
+                resource: inf #resource: da .csv ogni colonna rappresenterà i valori orari degli inflow al 1° bacino nell' i-esimo nodo
+                energy_cap_max: inf
+                force_resource: true
+           costs:
+                monetary:
+                      om_annual: 0                          
+                      
+      ConversionPlus0:
+           essentials:
+                name: 'from water0 to hp0'
+                parent: conversion_plus
+                carrier_in: water0
+                carrier_out: water_to_hp0 #già convertita in kWh
+                carrier_out_2: waterC
+                primary_carrier_out: water_to_hp0
+           constraints:
+                #carrier_ratios.carrier_out_2.water_to_storage2: 1 siccome non soi può caricare csv qua mettiamo 1 e poi convertiamo successivamente in un'altro conversion      
+                #energy_eff: ro*g*H*effy/3600
+                energy_cap_max: 10000000000 #fake capacità, molto alta per essere sicuri che sia sempre in grado di prendere in ingresso tutta l'acqua proveniente da storage                      
+
+      hydro0:
+           essentials:
+                name: 'VictoriaFalls'
+                color: '#1DFF97'
+                parent: conversion
+                carrier_in: water_to_hp0                
+                carrier_out: power                
+           constraints:                 
+                lifetime: 30
+                energy_cap_max: inf                 
+           costs:
+                monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1815 #FULLTEXT
+                      om_annual: 48
+
+
+#Ithezi
+      supply_waterA:
+           essentials:
+                name: 'inflow_ITT'
+                color: '#0287FF'
+                parent: supply
+                carrier_out: waterA
+           constraints:
+                resource: inf #resource: da .csv ogni colonna rappresenterà i valori orari degli inflow al 1° bacino nell' i-esimo nodo
+                energy_cap_max: inf
+                force_resource: true
+           costs:
+                monetary:
+                      om_annual: 0
+                      
+      storageA:
+           essentials: 
+                name: 'ITT'
+                parent: storage              
+                carrier: waterA
+                color: '#FF02EF'
+           constraints:
+                #da mettere in locations: storage capacity,cap_iniziale (energy_cap_per_storage_cap_min/max?) 
+                storage_cap_max: inf                
+           costs:
+                monetary:
+                      om_annual: 0                      
+
+                      
+      ConversionPlusA:
+           essentials:
+                name: 'from waterA to hpA'
+                parent: conversion_plus
+                carrier_in: waterA
+                carrier_out: water_to_hpA #già convertita in kWh
+                carrier_out_2: waterB
+                primary_carrier_out: water_to_hpA
+           constraints:
+                #carrier_ratios.carrier_out_2.water_to_storage2: 1 siccome non soi può caricare csv qua mettiamo 1 e poi convertiamo successivamente in un'altro conversion      
+                #energy_eff: ro*g*H*effy/3600
+                energy_cap_max: 10000000000 #fake capacità, molto alta per essere sicuri che sia sempre in grado di prendere in ingresso tutta l'acqua proveniente da storage                      
+
+
+      hydroA:
+           essentials:
+                name: 'ITT'
+                color: '#1DFF97'
+                parent: conversion
+                carrier_in: water_to_hpA                
+                carrier_out: power                
+           constraints:                 
+                lifetime: 30
+                energy_cap_max: inf                 
+           costs:
+                monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1815 #FULLTEXT
+                      om_annual: 48
+
+      spillageA:
+           essentials:
+                name: 'spillageITT
+                color: '#FFAE02'
+                parent: conversion
+                carrier_in: waterA
+                carrier_out: waterB
+           constraints:
+                energy_cap_equals: 100000000000 #fake capacità per essere sicuri che riesca ad elaborare tutta l'acqua
+
+
+#Kafue Gorge
+
+      supply_waterB:  #oltra all'acqua proveniente dai bacini a monte confluiranno anche eventuali affluenti intermedi e si tiene anche conto delle precipitazioni
+           essentials:
+                name: 'inflow_KafueGorge'
+                color: '#0287FF'
+                parent: supply
+                carrier_out: waterB
+           constraints:
+                resource: inf #resource: da .csv ogni colonna rappresenterà i valori orari degli inflow al 1° bacino nell' i-esimo nodo
+                energy_cap_max: inf
+                force_resource: true
+           costs:
+                monetary:
+                      om_annual: 0
+                      
+      storageB:
+           essentials: 
+                name: 'KafueGorge'
+                parent: storage              
+                carrier: waterB
+                color: '#FF02EF'
+           constraints:
+                #da mettere in locations: storage capacity,cap_iniziale (energy_cap_per_storage_cap_min/max?) 
+                storage_cap_max: inf                
+           costs:
+                monetary:
+                      om_annual: 0                      
+
+                      
+      ConversionPlusB:
+           essentials:
+                name: 'from waterB to hpB'
+                parent: conversion_plus
+                carrier_in: waterB
+                carrier_out: water_to_hpB #già convertita in kWh
+                carrier_out_2: waterD
+                primary_carrier_out: water_to_hpB
+           constraints:
+                #carrier_ratios.carrier_out_2.water_to_storage2: 1 siccome non soi può caricare csv qua mettiamo 1 e poi convertiamo successivamente in un'altro conversion      
+                #energy_eff: ro*g*H*effy/3600
+                energy_cap_max: 10000000000 #fake capacità, molto alta per essere sicuri che sia sempre in grado di prendere in ingresso tutta l'acqua proveniente da storage                      
+
+      hydroB:
+           essentials:
+                name: 'KafueGorge'
+                color: '#1D3EFF'
+                parent: conversion
+                carrier_in: water_to_hpB                
+                carrier_out: power                
+           constraints:                 
+                lifetime: 30
+                energy_cap_max: inf                 
+           costs:
+                monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1815 #FULLTEXT
+                      om_annual: 48
+
+      spillageB:
+           essentials:
+                name: 'spillageKafueGorge'
+                color: '#FFAE02'
+                parent: conversion
+                carrier_in: waterB
+                carrier_out: waterD
+           constraints:
+                energy_cap_equals: 100000000000 
+
+#Kariba
+      supply_waterC: #
+           essentials:
+                name: 'inflow_Kariba'
+                color: '#0287FF'
+                parent: supply
+                carrier_out: waterC
+           constraints:
+                resource: inf #resource: da .csv ogni colonna rappresenterà i valori orari degli inflow al 1° bacino nell' i-esimo nodo
+                energy_cap_max: inf
+                force_resource: true
+           costs:
+                monetary:
+                      om_annual: 0
+                      
+      storageC:
+           essentials: 
+                name: 'Kariba'
+                parent: storage              
+                carrier: waterC
+                color: '#FF02EF'
+           constraints:
+                #da mettere in locations: storage capacity,cap_iniziale (energy_cap_per_storage_cap_min/max?) 
+                storage_cap_max: inf                
+           costs:
+                monetary:
+                      om_annual: 0
+
+      ConversionPlusC:
+           essentials:
+                name: 'from waterC to hpC'
+                parent: conversion_plus
+                carrier_in: waterC
+                carrier_out: water_to_hpC #già convertita in kWh
+                carrier_out_2: waterD
+                primary_carrier_out: water_to_hpC
+           constraints:
+                #carrier_ratios.carrier_out_2.water_to_storage2: 1 siccome non soi può caricare csv qua mettiamo 1 e poi convertiamo successivamente in un'altro conversion      
+                #energy_eff: ro*g*H*effy/3600
+                energy_cap_max: 10000000000 #fake capacità, molto alta per essere sicuri che sia sempre in grado di prendere in ingresso tutta l'acqua proveniente da storage
+                
+                
+      hydroC:
+           essentials:
+                name: 'Kariba'
+                color: '#118EC2'
+                parent: conversion
+                carrier_in: water_to_hpC                
+                carrier_out: power                
+           constraints:                 
+                lifetime: 30
+                energy_cap_max: inf                 
+           costs:
+                monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1815 #FULLTEXT
+                      om_annual: 48
+                      
+      spillageC:
+           essentials:
+                name: 'spillageKariba'
+                color: '#FFAE02'
+                parent: conversion
+                carrier_in: waterC
+                carrier_out: waterD
+           constraints:
+                energy_cap_equals: 100000000000                      
+ 
+#Cahora
+
+      supply_waterD:
+           essentials:
+                name: 'inflow_Cahora' 
+                color: '#07FBF5'
+                parent: supply
+                carrier_out: waterD
+           constraints:
+                resource: inf #per contare precipitazioni e eventuali affluenti presenti tra storage 1 e 2
+                energy_cap_max: inf
+                force_resource: true
+           costs:
+                monetary:
+                      om_annual: 0
+      storageD:
+           essentials: 
+                name: 'Cahora'
+                parent: storage
+                carrier: waterD
+                color: '#3B61E3'                
+           constraints:
+                #da mettere in locations: storage capacity,cap_iniziale (energy_cap_per_storage_cap_min/max?)
+                storage_cap_max: inf
+                #resouce: .csv da aggiungere in ogni location
+           costs:
+                monetary:
+                      om_annual: 0
+
+
+      hydroD:
+           essentials:
+                name: 'Cahora'
+                color: '#003C72'
+                parent: conversion
+                carrier_in: waterD             
+                carrier_out: power                
+           constraints:                 
+                lifetime: 30
+                energy_cap_max: inf                 
+           costs:
+                monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1815 #FULLTEXT
+                      om_annual: 48
+
+      spillageD:
+           essentials:
+                name: 'spillageKariba'
+                color: '#FFAE02'
+                parent: conversion
+                carrier_in: waterD
+                carrier_out: waterE
+           constraints:
+                energy_cap_equals: 100000000000                      
+ 
+      # storage3: #necessario? forse no, sicuramente serve uba water demand3
+           # essentials: 
+                # name: 'bacino3'
+                # parent: storage
+                # carrier: water3
+                #c'è bisogno di una domanda fake soddisfatta da release3 o basta mettere capacità di storage infinita e accumula tutto beatamente?
+           # constraints:
+                #bacino fake per rispettare il bilancio di massa dell'acqua o si può pensare sia il delta del fiume che va in oceano
+                # storage_cap_max: inf
+                # energy_cap_per_storage_cap_equals: 1
+           # costs:
+                # monetary:
+                      # om_annual: 0
+                      
+#impianto idroelettrico non facente parte del sistema di bacini sopra descritto                      
+      hydro:
+           essentials:
+                name: 'Hydro'
+                color: '#02FFD3'
+                parent: supply                               
+                carrier_out: power                
+           constraints:                 
+                lifetime: 30
+                energy_cap_max: inf                 
+           costs:
+                monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1815 #FULLTEXT
+                      om_annual: 48
+
+
+          
+
+#domanda di acqua (per irrigazione motivi sanitari o altro) che non viene turbinata!
+      demand_waterA: #per storageA
+           essentials:
+                name: 'Water demand1'
+                color: '#BD07FB'
+                parent: demand
+                carrier: water1
+  
+      demand_waterB: #per storageB
+           essentials:
+                name: 'Water demand2'
+                color: '#BD07FB'
+                parent: demand
+                carrier: water2
+  
+      demand_waterC: #per storageC
+           essentials:
+                name: 'Water demand3'
+                color: '#BD07FB'
+                parent: demand
+                carrier: water3  
+      
+                      

@@ -1,0 +1,27 @@
+##
+# LOCATIONS
+##
+
+locations:
+    # Botswana
+    Botswana:
+        coordinates: {lat: -21, lon: 24}
+        techs:          
+            demand_power:   
+                constraints:
+                    resource: file=timeseries.csv:Botswana
+                    
+            Coal: #Morupule A+B,Mmamabula
+                constraints:
+                    energy_cap_equals: 732000
+                    #energy_cap_min_use: 0.163
+                     
+            OCGT:
+                constraints:
+                    energy_cap_equals: 90000
+                     
+            DieselEngine:
+                constraints:
+                    energy_cap_equals: 70000
+                     
+            #1MW di PV                  

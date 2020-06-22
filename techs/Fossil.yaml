@@ -1,0 +1,133 @@
+techs:
+
+#supply
+
+
+#thermal
+
+#diesel
+
+
+      DieselEngine:
+           essentials:
+                 name: 'DieselEngine'
+                 color: '#E33B78'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 30
+                 energy_eff: 0.35
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 708
+                      om_annual: 24 #$/kW
+                      om_prod: 0.003 #$/kWh
+                      om_con: 0.049284 #$/kWh
+
+#gas
+
+
+      GasEngine:
+           essentials:
+                 name: 'GasEngine'
+                 color: '#E9A603'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 30
+                 energy_eff: 0.40
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 708 #???
+                      om_annual: 24 #$/kW
+                      om_prod: 0.0024 #$/kWh
+                      om_con: 0.010908 #$/kWh
+
+
+      OCGT:
+           essentials:
+                 name: 'OCGT'
+                 color: '#E84C4C'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 30
+                 energy_eff: 0.30
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 708
+                      om_annual: 24 #$/anno
+                      om_prod: 0.0024 #$/kWh
+                      om_con: 0.049284 #$/kWh Kerosene o Diesel
+                 
+#coal
+      Coal:
+           essentials:
+                 name: 'Coal'
+                 color: '#CCCCCC'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 50
+                 energy_eff: 0.35
+                 energy_cap_max: inf
+                 energy_ramping: 0.15
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1800
+                      om_annual: 32 #$/kW anno
+                      om_prod: 0.0024 #$/kWh
+                      om_con: 0.007 #$/kWh  
+                      
+      Coal_old:
+           essentials:
+                 name: 'Coal_old'
+                 color: '#5E5E5E'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 50
+                 energy_eff: 0.20
+                 energy_cap_max: inf
+                 energy_ramping: 0.15
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1800
+                      om_annual: 32 #$/kW anno
+                      om_prod: 0.0024 #$/kWh
+                      om_con: 0.007 #$/kWh  
+
+#HFO                      
+      HFO:
+           essentials:
+                 name: 'HFO'
+                 color: '#AF2D2D'
+                 parent: supply
+                 carrier_out: power
+           constraints:
+                 resource: inf
+                 lifetime: 50
+                 energy_eff: 0.35
+                 energy_cap_max: inf
+           costs:
+                 monetary:
+                      interest_rate: 0.10
+                      energy_cap: 1350                      
+                      om_prod: 0.015 #$/kWh
+                      om_con: 0.0139 #$/kWh  
+                   
+
+

@@ -1,0 +1,28 @@
+techs:
+
+#trasmissione
+      ElectricTransmission:
+           essentials:
+                 name: 'ElectricTransmission'
+                 color: '#8465A9'
+                 parent: transmission
+                 carrier: power
+           constraints:
+                 energy_eff: 0.95
+                 energy_cap_max: inf
+          
+
+#domanda energetica
+      demand_power:
+           essentials:
+                 name: 'Power demand'
+                 color: '#072486'
+                 parent: demand
+                 carrier: power
+#Export 
+#      Export:
+#           essentials:
+#                 name: 'Export'
+#                 color: '#6CFB07'
+#                 parent: demand
+#                 carrier: export

@@ -1,0 +1,96 @@
+##
+# LOCATIONS
+##
+
+locations:
+    # region-1-start
+    North-Center:
+        coordinates: {lat: -15, lon: 33}
+        techs:    
+
+            demand_power:   
+                constraints:
+                    resource: file=Energy-demand-Centro+Nord.csv:demand
+
+            storage1:
+                constraints:
+                    storage_cap_equals: 20000000 # m^3
+                    storage_initial: 15000000
+                    resource: file=Inflow.csv:inflow1
+
+            ConversionPlus1:
+                constraints:
+                    carrier_ratios:
+                           carrier_out:
+                                water_to_hp1: 0.245 #1000*9.8*100*0.9/3600 kWh/m^3
+                           carrier_out_2:
+                                water_to_storage2: 1
+
+            hydro1:
+                constraints:
+                    energy_cap_equals: 500000 #0.5GW
+
+            storage2:
+                constraints:
+                    storage_cap_equals: 10000000 # m^3
+                    storage_initial: 5000000
+                    resource: file=Inflow.csv:inflow2
+
+            ConversionPlus2:
+                constraints:
+                    carrier_ratios:
+                           carrier_out:
+                                water_to_hp2: 0.0735 #1000*9.8*30*0.9/3600 kWh/m^3
+                           carrier_out_2:
+                                water_to_storage3: 1
+            storage3:
+                constraints:
+
+            DieselEngine: #Nacala Barcassa + (Nampula + Quelimane + Pemba + Lichinga emergency)
+                constraints:
+                    energy_cap_equals: 116.34 # di cui 13.84 da impianti usati per peak emergency
+
+            OCGT: #Beira
+                constraints:
+                    energy_cap_equals: 14000
+
+    # region-1-end
+    
+    
+    
+    
+    # other-locs-start
+    South:
+        coordinates: {lat: -26, lon: 32}
+
+        techs:
+            
+            demand_power:
+                constraints:
+                    resource: file=Energy-demand-South.csv:demand
+
+#            hydro: #Corumana 
+#                constraints:
+#                    energy_cap_equals: 16600 #kW 
+                    
+            DieselEngine: #Xai-Xai + Inhambane both emergency
+                constraints: 
+                    energy_cap_equals: 8.2
+                    
+            GasEngine: #Temane+CTRG-PPP+Agrekko+Gigawatt+Kuvaninga
+                 constraints:
+                     energy_cap_equals: 499600
+            
+            OCGT: #CTM GT
+                 constraints:
+                     energy_cap_equals: 24000
+                    
+                    
+                    
+links: 
+    North-Center,South:
+                techs:
+                   ElectricTransmission:
+
+    
+    

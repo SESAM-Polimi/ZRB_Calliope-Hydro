@@ -1,0 +1,30 @@
+##
+# LOCATIONS
+##
+
+locations:
+    # Namibia
+    Namibia:
+        coordinates: {lat: -19, lon: 30}
+        techs:  
+        
+            demand_power:   
+                constraints:
+                    resource: file=timeseries.csv:Namibia
+ 
+                    
+#altre tecnologie                   
+                    
+            Coal: #Van Eck
+                constraints:
+                    energy_cap_equals: 120000
+                     
+            DieselEngine: #Paratus+Anixas
+                constraints:
+                    energy_cap_equals: 38500
+                     
+            hydro: #Ruacana
+                constraints:
+                    energy_cap_equals: 300000 
+                     
+                    
