@@ -9,7 +9,7 @@ locations:
         techs:          
             demand_power:   
                 constraints:
-                    resource: file=timeseries.csv:Botswana
+                    resource: file=Demand.csv:Botswana
                     
             Coal: #Morupule A+B,Mmamabula
                 constraints:

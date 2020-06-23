@@ -10,7 +10,7 @@ locations:
         
             demand_power:   
                 constraints:
-                    resource: file=timeseries.csv:Zimbabwe
+                    resource: file=Demand.csv:Zimbabwe
                     
 #idroelettrico legato allo Zambezi river basin      
               

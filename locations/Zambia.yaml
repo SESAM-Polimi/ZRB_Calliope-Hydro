@@ -11,7 +11,7 @@ locations:
         techs:            
             demand_power:
                 constraints:
-                    resource: file=timeseries.csv:Zambia
+                    resource: file=Demand.csv:Zambia
  
 #centrali del Zambezi river basin
                        
@@ -20,7 +20,7 @@ locations:
             
             supply_waterA:
                 constraints:
-                    resource: file=timeseries.csv:InflowITT                     
+                    resource: file=Inflows.csv:InflowITT                     
 
             storageA:
                 constraints:
@@ -48,7 +48,7 @@ locations:
             # KafueGorge      
             supply_waterB:
                 constraints:
-                    resource: file=timeseries.csv:InflowKG                     
+                    resource: file=Inflows.csv:InflowKG                     
 
             storageB:
                 constraints:
@@ -76,7 +76,7 @@ locations:
             #Kariba 
             supply_waterC:
                 constraints:
-                    resource: file=timeseries.csv:InflowKA 
+                    resource: file=Inflows.csv:InflowKA 
                     
             storageC:
                 constraints:
@@ -121,7 +121,7 @@ locations:
             PV:
                 constraints:
                     energy_cap_equals: 1000
-                    resource: file=timeseries.csv:PV Zambia #renewables.ninja
+                    resource: file=PV.csv:PV Zambia #renewables.ninja
 
             
     

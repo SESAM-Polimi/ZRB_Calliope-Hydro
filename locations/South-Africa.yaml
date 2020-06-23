@@ -27,12 +27,12 @@ locations:
             PV:
                 constraints:
                     energy_cap_equals: 1474000
-                    resource: file=timeseries.csv:PV SudAfrica  #da renewables.ninja
+                    resource: file=PV.csv:PV SudAfrica  #da renewables.ninja
 
             Wind:
                 constraints:
                     energy_cap_equals: 2078000
-                    resource: file=timeseries.csv:Wind SudAfrica  #da renewables.ninja                    
+                    resource: file=Wind.csv:Wind SudAfrica  #da renewables.ninja                    
 
 
 #pumped hydro: da modellare come batterie?! guarda swiss calliope
@@ -41,7 +41,7 @@ locations:
                      
             demand_power:
                 constraints:
-                    resource: file=timeseries.csv:SouthAfrica 
+                    resource: file=Demand.csv:SouthAfrica 
                     
             
                     
