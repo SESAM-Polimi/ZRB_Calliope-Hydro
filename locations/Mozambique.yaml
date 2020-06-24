@@ -10,12 +10,12 @@ locations:
         
             demand_power:   
                 constraints:
-                    resource: file=Demand.csv:North-Center-Moz
+                    resource: file=timeseries.csv:North-Center-Moz
                                                     
                    
             supply_waterD:
                 constraints:
-                    resource: file=Inflows.csv:InflowCB   #da csv
+                    resource: file=timeseries.csv:InflowCB   #da csv
 
             storageD:
                 constraints:
@@ -55,7 +55,7 @@ locations:
             
             demand_power:
                 constraints:
-                    resource: file=Demand.csv:South-Moz
+                    resource: file=timeseries.csv:South-Moz
 
             hydro: #Corumana 
                 constraints:

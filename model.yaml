@@ -42,5 +42,5 @@ run:
     mode: plan # Choices: plan, operate
     
     # operation:
-          # horizon: 48 # hours
-          # window: 24 # hours
+    #       horizon: 48 # hours
+    #       window: 24 # hours

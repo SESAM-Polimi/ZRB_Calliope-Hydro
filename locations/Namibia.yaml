@@ -10,7 +10,7 @@ locations:
         
             demand_power:   
                 constraints:
-                    resource: file=Demand.csv:Namibia
+                    resource: file=timeseries.csv:Namibia
  
                     
 #altre tecnologie                   
