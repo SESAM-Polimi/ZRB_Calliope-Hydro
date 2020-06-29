@@ -11,7 +11,7 @@ locations:
             Coal:
                 constraints:
                     energy_cap_equals: 37868000
-                    energy_cap_min_use: 0.68
+                    # energy_cap_min_use: 0.68
                      
             Nuclear:
                 constraints:

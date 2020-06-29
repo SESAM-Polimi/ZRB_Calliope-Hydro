@@ -44,7 +44,7 @@ for indice in range(1,11):
       EvapRate_ITT=Data_ITT['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
       #ciclo per calcolare in ogni timestep il valore di eff e delle altre variabili inizializzate
-      for a in range(0, 48):    
+      for a in range(0, 17520):    
           eff_conv_ITT.iloc[a]=(40.5-(1030.5-(-5*10**(-19)*(StorageA_nuovo.iloc[a] + 699000000)**2 + 8*10**(-9)*(StorageA_nuovo.iloc[a] + 699000000)+1000.7)))*9.8*1000*0.9/3600*10**(-3)
           supStorage_ITT.iloc[a]= -3*10**(-12)*(StorageA_nuovo.iloc[a] + 699000000)**2 + 0.08*(StorageA_nuovo.iloc[a] + 699000000)+3*10**7
           b=a+2
@@ -64,7 +64,7 @@ for indice in range(1,11):
       Data_KG=openpyxl.load_workbook('Timeseries/lsv_min_max_rel_KGU.xlsx') #carico excel con tutti i dati relativi a ITT
       EvapRate_KG=Data_KG['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
-      for k in range(0, 48):    
+      for k in range(0, 17520):    
           eff_conv_KG.iloc[k]=(397-(977.6-(957*(StorageB_nuovo.iloc[k] + 5000000)**0.001)))*9.8*1000*0.9/3600*10**(-3)
           supStorage_KG.iloc[k]= -10**(-10)*(StorageB_nuovo.iloc[k] + 5000000)**2 + 1.129*(StorageB_nuovo.iloc[k] + 5000000)-10**7
           h=k+2
@@ -83,7 +83,7 @@ for indice in range(1,11):
       Data_KA=openpyxl.load_workbook('Timeseries/lsv_min_max_rel_KA.xlsx') #carico excel con tutti i dati relativi a ITT
       EvapRate_KA=Data_KA['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
-      for j in range(0, 48):    
+      for j in range(0, 17520):    
           eff_conv_KA.iloc[j]=(110-(489.5-(-5*10**(-23)*(StorageC_nuovo.iloc[j] + 116054000000)**2 + 2*10**(-10)*(StorageC_nuovo.iloc[j] + 116054000000)+452.89)))*9.8*1000*0.9/3600*10**(-3)
           supStorage_KA.iloc[j]= -10**(-13)*(StorageC_nuovo.iloc[j] + 116054000000)**2 + 0.0493*(StorageC_nuovo.iloc[j] + 116054000000)+4*10**6
           l=j+2
@@ -103,7 +103,7 @@ for indice in range(1,11):
       EvapRate_CB=Data_CB['evap+salto'] #seleziono il foglio dove ci sono i dati di evaporazione, i quali si trovano nella sesta colonna, la selezioneremo successivamente
 
 
-      for i in range(0, 48):    
+      for i in range(0, 17520):    
           eff_conv_CB.iloc[i]=(128-(331-(6*10**(-21)*(StorageD_nuovo.iloc[i] + 32000000)**2 + 9*10**(-10)*(StorageD_nuovo.iloc[i] + 32000000)+294.16)))*9.8*1000*0.9/3600*10**(-3)  #riempo variabile eff con eff calcolata in funzione dello storage
           supStorage_CB.iloc[i]= -2*10**(-13)*(StorageD_nuovo.iloc[i] + 32000000)**2 + 0.0469*(StorageD_nuovo.iloc[i] + 32000000)+8*10**8
           c=i+2
@@ -114,6 +114,6 @@ for indice in range(1,11):
       eff_conv_CB.to_csv('Timeseries/effCB.txt') #produco csv con eff
       evapLoss_CB.to_csv('Timeseries/evapLoss_CB.txt')
 
-      model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenariox/Iterazione'+str(indice))
+      model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario_A_NoCF/Iterazione'+str(indice))
      
 
