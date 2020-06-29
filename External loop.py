@@ -114,6 +114,6 @@ for indice in range(1,11):
       eff_conv_CB.to_csv('Timeseries/effCB.txt') #produco csv con eff
       evapLoss_CB.to_csv('Timeseries/evapLoss_CB.txt')
 
-      model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario_A_NoCF/Iterazione'+str(indice))
+      model.to_csv('C:/Users/Stevanato/Documents/GitHub/ZRB_Calliope-Hydro/Results/Scenario_A_NoCF/Iterazione'+str(indice))
      
 
