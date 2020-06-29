@@ -2,7 +2,7 @@
 """
 Created on Tue Dec  3 11:04:23 2019
 
-@author: Alessandro Barbieri
+@author: Alessandro Barbieri - Nicolò Stevanato
             Politecnico di Milano - Department of Energy
 """
 import openpyxl
