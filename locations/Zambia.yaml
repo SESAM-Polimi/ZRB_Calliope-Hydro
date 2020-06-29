@@ -117,6 +117,7 @@ locations:
             Coal:
                 constraints:
                     energy_cap_equals: 300000
+                    energy_cap_min_use: 0.306
                      
             PV:
                 constraints:
