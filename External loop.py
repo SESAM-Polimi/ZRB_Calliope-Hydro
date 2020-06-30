@@ -2,7 +2,7 @@
 """
 Created on Tue Dec  3 11:04:23 2019
 
-@author: Alessandro Barbieri
+@author: Alessandro Barbieri - Nicolò Stevanato
             Politecnico di Milano - Department of Energy
 """
 import openpyxl
@@ -114,6 +114,6 @@ for indice in range(1,11):
       eff_conv_CB.to_csv('Timeseries/effCB.txt') #produco csv con eff
       evapLoss_CB.to_csv('Timeseries/evapLoss_CB.txt')
 
-      model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario_A_NoCF/Iterazione'+str(indice))
+      model.to_csv('C:/Users/Stevanato/Documents/GitHub/ZRB_Calliope-Hydro/Results/Scenario_A_NoCF/Iterazione'+str(indice))
      
 
