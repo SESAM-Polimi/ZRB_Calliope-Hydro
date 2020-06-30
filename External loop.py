@@ -34,8 +34,8 @@ for indice in range(1,11):
       DataFrame15=model.get_formatted_array('carrier_prod').loc[{'techs':'OCGT','carriers':'power','locs':['Moz-North-Center']}].to_pandas().T
       
       #ITT    
-      #estraggo valore dello storage e inizializzo le variabili eff, water to storage a valle, superficie del baciono e perdite da evaporazione
-      #inoltre carico file excell in cui sono riportati i valori dell'evaporation rate
+      #estraggo valore dello storage e inizializzo le variabili eff, water to storage a valle, superficie del bacino e perdite da evaporazione
+      #inoltre carico file excel in cui sono riportati i valori dell'evaporation rate
       StorageA_nuovo=model.get_formatted_array('storage').loc[{'techs': 'storageA','locs':['Zambia']}].to_pandas().T #estraggo risultati da modello
       eff_conv_ITT = DataFrame1
       evapLoss_ITT= DataFrame3
