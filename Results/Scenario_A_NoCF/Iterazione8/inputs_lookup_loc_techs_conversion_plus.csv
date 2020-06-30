@@ -1,0 +1,13 @@
+carrier_tiers,locs,techs,lookup_loc_techs_conversion_plus
+out,Zambia,ConversionPlusA,Zambia::ConversionPlusA::water_to_hpA
+out,Zambia,ConversionPlusB,Zambia::ConversionPlusB::water_to_hpB
+out,Zambia,ConversionPlusC,Zambia::ConversionPlusC::water_to_hpC
+out,Zimbabwe,ConversionPlusC,Zimbabwe::ConversionPlusC::water_to_hpC
+in,Zambia,ConversionPlusA,Zambia::ConversionPlusA::waterA
+in,Zambia,ConversionPlusB,Zambia::ConversionPlusB::waterB
+in,Zambia,ConversionPlusC,Zambia::ConversionPlusC::waterC
+in,Zimbabwe,ConversionPlusC,Zimbabwe::ConversionPlusC::waterC
+out_2,Zambia,ConversionPlusA,Zambia::ConversionPlusA::waterB
+out_2,Zambia,ConversionPlusB,Zambia::ConversionPlusB::waterD
+out_2,Zambia,ConversionPlusC,Zambia::ConversionPlusC::waterD
+out_2,Zimbabwe,ConversionPlusC,Zimbabwe::ConversionPlusC::waterD
