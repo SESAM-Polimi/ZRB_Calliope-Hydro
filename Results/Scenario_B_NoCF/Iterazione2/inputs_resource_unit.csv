@@ -1,0 +1,15 @@
+locs,techs,resource_unit
+Botswana,demand_power,energy
+Moz-North-Center,demand_power,energy
+Moz-North-Center,supply_waterD,energy
+Moz-South,demand_power,energy
+Namibia,demand_power,energy
+SudAfrica,PV,energy
+SudAfrica,Wind,energy
+SudAfrica,demand_power,energy
+Zambia,PV,energy
+Zambia,demand_power,energy
+Zambia,supply_waterA,energy
+Zambia,supply_waterB,energy
+Zambia,supply_waterC,energy
+Zimbabwe,demand_power,energy

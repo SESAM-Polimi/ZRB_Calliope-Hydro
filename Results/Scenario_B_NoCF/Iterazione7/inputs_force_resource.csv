@@ -1,0 +1,15 @@
+locs,techs,force_resource
+Botswana,demand_power,1.0
+Moz-North-Center,demand_power,1.0
+Moz-North-Center,supply_waterD,1.0
+Moz-South,demand_power,1.0
+Namibia,demand_power,1.0
+SudAfrica,PV,1.0
+SudAfrica,Wind,1.0
+SudAfrica,demand_power,1.0
+Zambia,PV,1.0
+Zambia,demand_power,1.0
+Zambia,supply_waterA,1.0
+Zambia,supply_waterB,1.0
+Zambia,supply_waterC,1.0
+Zimbabwe,demand_power,1.0
