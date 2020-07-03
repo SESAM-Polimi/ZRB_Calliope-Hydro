@@ -12,7 +12,8 @@ locations:
                 constraints:
                     energy_cap_equals: 37868000
                     energy_cap_min_use: 0.25
-                     
+                    energy_ramping: 0.15
+
             Nuclear:
                 constraints:
                     energy_cap_equals: 1860000

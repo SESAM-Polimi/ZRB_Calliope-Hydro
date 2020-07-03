@@ -1,0 +1,5 @@
+locs,techs,lookup_primary_loc_tech_carriers_out
+Zambia,ConversionPlusA,Zambia::ConversionPlusA::water_to_hpA
+Zambia,ConversionPlusB,Zambia::ConversionPlusB::water_to_hpB
+Zambia,ConversionPlusC,Zambia::ConversionPlusC::water_to_hpC
+Zimbabwe,ConversionPlusC,Zimbabwe::ConversionPlusC::water_to_hpC

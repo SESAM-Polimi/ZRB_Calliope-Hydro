@@ -30,7 +30,8 @@ locations:
                 constraints:
                     energy_cap_equals: 920000
                     energy_cap_min_use: 0.25
-                     
+                    energy_ramping: 0.15
+
             Coal_old:
                 constraints:
                     energy_cap_equals: 270000

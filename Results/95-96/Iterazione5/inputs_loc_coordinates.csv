@@ -1,0 +1,15 @@
+coordinates,locs,loc_coordinates
+lat,Namibia,-19
+lat,Moz-South,-26
+lat,SudAfrica,-26
+lat,Zambia,-28
+lat,Zimbabwe,-18
+lat,Botswana,-21
+lat,Moz-North-Center,-15
+lon,Namibia,30
+lon,Moz-South,32
+lon,SudAfrica,28
+lon,Zambia,15
+lon,Zimbabwe,30
+lon,Botswana,24
+lon,Moz-North-Center,33

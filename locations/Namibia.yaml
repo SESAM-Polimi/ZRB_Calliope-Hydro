@@ -19,6 +19,7 @@ locations:
                 constraints:
                     energy_cap_equals: 120000
                     energy_cap_min_use: 0.25
+                    energy_ramping: 0.15
                      
             DieselEngine: #Paratus+Anixas
                 constraints:

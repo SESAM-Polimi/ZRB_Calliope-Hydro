@@ -15,6 +15,7 @@ locations:
                 constraints:
                     energy_cap_equals: 732000
                     energy_cap_min_use: 0.25
+                    energy_ramping: 0.15
                      
             OCGT:
                 constraints:
