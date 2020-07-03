@@ -10,7 +10,7 @@ import calliope
 import os
 
 
-for indice in range(1,2):                 
+for indice in range(1,11):                 
     
       model = calliope.Model('model.yaml')
 
@@ -114,8 +114,8 @@ for indice in range(1,2):
       eff_conv_CB.to_csv('Timeseries/effCB.txt') #produco csv con eff
       evapLoss_CB.to_csv('Timeseries/evapLoss_CB.txt')
 
-    #   model.to_csv('C:/Users/Stevanato/Documents/GitHub/ZRB_Calliope-Hydro/Results/Scenario_C_NoCF/Iterazione'+str(indice))
-      model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario_C_NoCF/Iterazione'+str(indice))
+      model.to_csv('C:/Users/Stevanato/Documents/GitHub/ZRB_Calliope-Hydro/Results/Scenario_A_IRENA/Iterazione'+str(indice))
+      # model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario_C_NoCF/Iterazione'+str(indice))
       
      
 

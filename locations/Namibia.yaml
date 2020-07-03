@@ -18,6 +18,7 @@ locations:
             Coal: #Van Eck
                 constraints:
                     energy_cap_equals: 120000
+                    energy_cap_min_use: 0.25
                      
             DieselEngine: #Paratus+Anixas
                 constraints:
