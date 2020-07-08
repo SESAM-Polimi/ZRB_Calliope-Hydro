@@ -12,7 +12,7 @@ import calliope
 import os
 
 
-for indice in range(10,11):                 
+for indice in range(1,11):                 
     
       model = calliope.Model('model.yaml')
 
