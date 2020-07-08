@@ -2,15 +2,17 @@
 """
 Created on Tue Dec  3 11:04:23 2019
 
-@authors: Alessandro Barbieri - Nicolò Stevanato
+@authors: Nicolò Stevanato - Alessandro Barbieri
             Politecnico di Milano - Department of Energy
+          Martina Daddi
+            Politecnico di Milano - Department of Electronics, Information and Bioengineering
 """
 import openpyxl
 import calliope
 import os
 
 
-for indice in range(1,11):                 
+for indice in range(10,11):                 
     
       model = calliope.Model('model.yaml')
 
@@ -114,8 +116,8 @@ for indice in range(1,11):
       eff_conv_CB.to_csv('Timeseries/effCB.txt') #produco csv con eff
       evapLoss_CB.to_csv('Timeseries/evapLoss_CB.txt')
 
-      model.to_csv('C:/Users/Stevanato/Documents/GitHub/ZRB_Calliope-Hydro/Results/Scenario_A_IRENA/Iterazione'+str(indice))
-      # model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario_C_NoCF/Iterazione'+str(indice))
+      model.to_csv('C:/Users/Stevanato/Documents/GitHub/ZRB_Calliope-Hydro/Results/Scenario_D_IRENA/Iterazione'+str(indice))
+      # model.to_csv('C:/Users/stevo/Repositories/ZRB_Calliope-Hydro/Results/Scenario/Iterazione'+str(indice))
       
      
 
