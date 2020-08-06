@@ -14,7 +14,7 @@ The two models are combined by an iterative process:
 - the timeseries of Storage Levels are, in turns, updated as a result of the evaporation losses from the surfaces of the basins, dependent on the surface area and hence, the Storage Level, and the optimal power dispatch of Dams operation, in response to available power, function of the Hydraulic Head and hence, the Storage Level;
 - the iteration continues until reaching a Storage Level trend that is not significantly different from that calculated on the previous iteration.
 
-<img src="https://github.com/SESAM-Polimi/ZRB_Calliope-Hydro/blob/master/Multiple%20Cascade%20Water%20Reservoirs.png" width="600">
+<img src="https://github.com/SESAM-Polimi/ZRB_Calliope-Hydro/blob/master/Calliope%20Hydro%20Loop.png" width="600">
 
 Further details about the methodology are reported in the related publication.
 
