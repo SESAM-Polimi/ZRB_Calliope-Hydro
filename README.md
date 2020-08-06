@@ -1,6 +1,9 @@
 # ZRB_Calliope-Hydro
 Repository of the Calliope Hydro Model of the Zambesi River Basin
 
+## How to run
+In order to run the model, run Calliope_Hydro.py 
+
 ## Overview
 The model hosted in this repository consists in an integrated coupling between the energy modelling framework Calliope (For further details about Calliope, see: https://github.com/calliope-project), specifically modelled to descrcibe multiple cascade water reservoirs hydro systems, including the national loads of the modelled countries and relative other power generation technologies, and a hydrologic simulation model of the water surface evaporation and dependence of the hydro-power production from the storage level of the dams.
 
