@@ -24,8 +24,8 @@ techs:
                       interest_rate: 0.10
                       energy_cap: 708
                       om_annual: 24 #$/kW
-                      om_prod: 0.003 #$/kWh
-                      om_con: 0.049284 #$/kWh
+                      om_prod: 0.003 #$/kWh_el
+                      om_con: 0.049284 #$/kWh_th
 
 #gas
 
