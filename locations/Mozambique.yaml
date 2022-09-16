@@ -27,7 +27,7 @@ locations:
                     
             spillageD:
                 constraints:
-                    energy_eff: 0                    
+                    energy_eff: file=spillageD_eff.txt:Moz-North-Center
                               
                                                          
             hydroD:
