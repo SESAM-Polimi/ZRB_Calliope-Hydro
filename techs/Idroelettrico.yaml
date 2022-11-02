@@ -113,13 +113,17 @@ techs:
 
       spillageA:
            essentials:
-                name: 'spillageITT
+                name: 'spillageITT'
                 color: '#FFAE02'
                 parent: conversion
                 carrier_in: waterA
                 carrier_out: waterB
            constraints:
                 energy_cap_equals: 100000000000 #fake capacità per essere sicuri che riesca ad elaborare tutta l'acqua
+           costs:
+                monetary:
+                     om_con: 5e15
+                     om_prod: -5e15
 
 
 #Kafue Gorge
@@ -189,10 +193,14 @@ techs:
                 carrier_in: waterB
                 carrier_out: waterD
            constraints:
-                energy_cap_equals: 100000000000 
+                energy_cap_equals: 100000000000
+           costs:
+                monetary:
+                     om_con: 5e15
+                     om_prod: -5e15
 
 #Kariba
-      supply_waterC: #
+      supply_waterC:
            essentials:
                 name: 'inflow_Kariba'
                 color: '#0287FF'
@@ -257,9 +265,13 @@ techs:
                 carrier_in: waterC
                 carrier_out: waterD
            constraints:
-                energy_cap_equals: 100000000000                      
- 
-#Cahora
+                energy_cap_equals: 100000000000
+           costs:
+                monetary:
+                     om_con: 5e15
+                     om_prod: -5e15
+
+     #Cahora
 
       supply_waterD:
            essentials:
@@ -313,7 +325,12 @@ techs:
                 carrier_in: waterD
                 carrier_out: waterE
            constraints:
-                energy_cap_equals: 100000000000                      
+                energy_cap_equals: 100000000000
+           costs:
+                monetary:
+                     om_con: 5e15
+                     om_prod: -5e15
+
  
       # storage3: #necessario? forse no, sicuramente serve uba water demand3
            # essentials: 
@@ -369,5 +386,3 @@ techs:
                 color: '#BD07FB'
                 parent: demand
                 carrier: water3  
-      
-                      

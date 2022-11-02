@@ -42,7 +42,7 @@ locations:
 
             spillageA:
                 constraints:
-                    energy_eff: 0                    
+                    energy_eff: file=spillageA_eff.txt:Zambia
 
         
             # KafueGorge      
@@ -71,7 +71,7 @@ locations:
                     
             spillageB:
                 constraints:
-                    energy_eff: 0
+                    energy_eff: file=spillageB_eff.txt:Zambia
      
             #Kariba 
             supply_waterC:
@@ -98,7 +98,7 @@ locations:
                     
             spillageC:
                 constraints:
-                    energy_eff: 0            
+                    energy_eff: file=spillageC_eff.txt:Zambia
                                         
 #altre tecnologie presenti
 
