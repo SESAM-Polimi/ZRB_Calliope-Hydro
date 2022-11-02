@@ -20,7 +20,7 @@ Further details about the methodology are reported in the related publication.
 The current version now considers the spillage.
 
 ## Calliope version
-To run the Calliope model in this repository without conflicts, please use the Calliope 0.6.5 version available here: https://www.callio.pe/news/2020/01/release-v0.6.5/
+To run the Calliope model in this repository without conflicts, please use the Calliope 0.6.6.post1 version available here: https://www.callio.pe/news/2020/01/release-v0.6.5/
 
 ## License
 [![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
